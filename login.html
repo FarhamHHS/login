@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: black;
+  background-image: linear-gradient(0deg, rgba(255, 255, 0, 0.1) 25%, transparent 25%, transparent 50%, rgba(255, 255, 0, 0.1) 50%, rgba(255, 255, 0, 0.1) 75%, transparent 75%, transparent);
+  background-size: 50px 50px;
+}
+
+.container {
+  width: 300px;
+  padding: 16px;
+  background-color: #00CED1;
+  border: 1px solid black;
+  margin: 0 auto;
+  border-radius: 5px;
+  margin-top: 100px;
+}
+
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+.btn {
+  background-color: #FFD700;
+  color: black;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.btn:hover {
+  opacity: 1;
+}
+
+.forgot, .register {
+  color: blue;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+
+<div id="login" class="container">
+  <label for="uname"><b>نام کاربری</b></label>
+  <input type="text" placeholder="نام کاربری خود را وارد کنید" name="uname" required>
+
+  <label for="psw"><b>رمز عبور</b></label>
+  <input type="password" placeholder="رمز عبور خود را وارد کنید" name="psw" required>
+
+  <button type="button" class="btn" onclick="login()">ورود</button>
+  <p id="message"></p>
+  <p class="forgot">رمز عبور را فراموش کرده‌اید؟</p>
+  <p class="register" onclick="showRegister()">ثبت نام</p>
+</div>
+
+<div id="register" class="container" style="display: none;">
+  <label for="uname"><b>نام کاربری</b></label>
+  <input type="text" placeholder="نام کاربری خود را وارد کنید" name="uname" required>
+
+  <label for="psw"><b>رمز عبور</b></label>
+  <input type="password" placeholder="رمز عبور خود را وارد کنید" name="psw" required>
+
+  <label for="psw-repeat"><b>تکرار رمز عبور</b></label>
+  <input type="password" placeholder="رمز عبور خود را دوباره وارد کنید" name="psw-repeat" required>
+
+  <button type="button" class="btn">ثبت نام</button>
+</div>
+
+<script>
+function login() {
+  document.getElementById('message').innerHTML = 'شما با موفقیت وارد شدید!';
+}
+
+function showRegister() {
+  document.getElementById('login').style.display = 'none';
+  document.getElementById('register').style.display = 'block';
+}
+</script>
+
+</body>
+</html>
